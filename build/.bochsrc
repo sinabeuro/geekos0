@@ -1,0 +1,33 @@
+vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+romimage: file=/usr/share/bochs/BIOS-bochs-latest
+
+megs: 8
+boot: floppy 
+
+floppy_bootsig_check: disabled=0
+floppya: 1_44=fd.img, status=inserted, write_protected=1
+#floppya: 1_44=fd_aug.img, status=inserted
+
+log: ./bochs.out
+keyboard_serial_delay: 250
+keyboard_paste_delay: 100000
+#floppy_command_delay: 500
+#vga_update_interval: 300000
+#vga: extension=vbe, update_freq=1
+
+vga: extension=vbe
+#ips:  1000000
+#cpu: count=1, ips=1000000, reset_on_triple_fault=1, ignore_bad_msrs=1, msrs="msrs.def"
+#cpu: cpuid_limit_winnt=0
+
+mouse: enabled=0
+private_colormap: enabled=0
+#i440fxsupport: enabled=0
+#pci: enabled=1, chipset=i440fx
+#newharddrivesupport: enabled=1
+
+# Uncomment this to write all bochs debugging messages to
+# bochs.out.  This produces a lot of output, but can be very
+# useful for debugging the kernel.
+#debug: action=report
+display_library: sdl
